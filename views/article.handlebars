@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header">
+        {{article.title}}
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>{{ body }}</p>
+        </blockquote>
+    </div>
+</div>
+<form>
+    <div class="form-group">
+        <label for="comment">Comment:</label>
+        {{#if article.comment}}
+        {{#each article.comment}}
+        <div class="card">
+            <textarea class="form-control" rows="5" id="comment">
+                <p id="nameComment">{{name}}</p>
+                <p>{{body}}<p>
+            </textarea>
+        </div>
+        {{/each}}
+        {{else}}
+        <p>0 Comments</p>
+        {{/if}}
+    </div>
+</form>
